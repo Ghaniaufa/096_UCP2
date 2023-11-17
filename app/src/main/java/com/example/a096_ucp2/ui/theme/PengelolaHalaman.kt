@@ -22,6 +22,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.a096_ucp2.R
+import com.example.a096_ucp2.data.FormUiState
 import com.example.a096_ucp2.data.SumberDataDosen.dosen
 
 enum class PengelolaHalaman{
@@ -68,7 +69,7 @@ fun ucpApp(
                 navigasiUp = { /*TODO: implement back navigation*/ })
         }
     ) { innerPadding ->
-        val uiState by viewModel.stateUI.collectAsState()
+        val formUiState by viewModel.stateUI.collectAsState()
         NavHost(
             navController = navController,
             startDestination = PengelolaHalaman.Home.name,
@@ -77,8 +78,23 @@ fun ucpApp(
             composable(route = PengelolaHalaman.Home.name) {
                 HalamanHome(
                     onNextButtonClicked = {
-                        navController.navigate(PengelolaHalaman.Contact.name)
+                        navController.navigate(PengelolaHalaman.Dosen.name)
                     }
+                )
+            }
+            composable(route = PengelolaHalaman.Dosen.name) {
+                val context = LocalContext.current
+                HalamanSatu(
+                    pilihanDosen1 = dosen.map { id -> context.resources.getString(id) },
+                    onNextButtonClicked = { navController.navigate(PengelolaHalaman.Summary.name) },
+                    onSelectionChanged = {viewModel.setDosen1(it)},
+                )
+            }
+            composable(route = PengelolaHalaman.Summary.name) {
+                HalamanDua(
+                    formUiState = FormUiState(),
+                    onBackButtonClicked = { cancelOrderAndNavigateToRasa(navController) },
+                    //onSendButtonClicked = { subject: String, summary: String ->}
                 )
             }
         }

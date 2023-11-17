@@ -29,10 +29,9 @@ import com.example.a096_ucp2.data.SumberDataDosen
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun HalamanSatu(
-    onSubmitButtonClick: (MutableList<String>) -> Unit,
+    onNextButtonClicked: (MutableList<String>) -> Unit,
     pilihanDosen1: List<String>,
     onSelectionChanged: (String) -> Unit,
-    modifier: Modifier
 ){
     var dosenYgDipilih1 by remember{ mutableStateOf("")}
 
@@ -78,7 +77,7 @@ fun HalamanSatu(
         }, label = {
             Text(text = "Judul Skripsi")
             Spacer(modifier = Modifier.padding(16.dp))
-            Button(onClick = { onSubmitButtonClick(listDataTxt) }) {
+            Button(onClick = { onNextButtonClicked(listDataTxt) }) {
                 Text(text = stringResource(id = R.string.btn_submit))
             }
         })

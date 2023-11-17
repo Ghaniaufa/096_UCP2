@@ -22,20 +22,20 @@ import com.example.a096_ucp2.data.FormUiState
 
 @Composable
 fun HalamanDua(
-    orderUiState: FormUiState,
+    formUiState: FormUiState,
     onBackButtonClicked: () -> Unit,
     modifier: Modifier = Modifier
 ){
     val contact = listOf(
-        Pair(stringResource(id = R.string.nama), orderUiState.nama),
-        Pair(stringResource(id = R.string.nim), orderUiState.nim),
-        Pair(stringResource(id = R.string.konsentrasi), orderUiState.konsentrasi),
-        Pair(stringResource(id = R.string.jk), orderUiState.jk),
+        Pair(stringResource(id = R.string.nama), formUiState.nama),
+        Pair(stringResource(id = R.string.nim), formUiState.nim),
+        Pair(stringResource(id = R.string.konsentrasi), formUiState.konsentrasi),
+        Pair(stringResource(id = R.string.jk), formUiState.jk),
     )
 
     val dosen = listOf(
-        Pair(stringResource(id = R.string.ndsn), orderUiState.dp1),
-        Pair(stringResource(id = R.string.ndsn), orderUiState.dp2)
+        Pair(stringResource(id = R.string.ndsn), formUiState.dp1),
+        Pair(stringResource(id = R.string.ndsn), formUiState.dp2)
 
 
     )

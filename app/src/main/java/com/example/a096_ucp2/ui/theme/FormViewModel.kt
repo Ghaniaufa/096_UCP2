@@ -1,5 +1,6 @@
 package com.example.a096_ucp2.ui.theme
 
+import androidx.lifecycle.VIEW_MODEL_STORE_OWNER_KEY
 import androidx.lifecycle.ViewModel
 import com.example.a096_ucp2.data.FormUiState
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -9,7 +10,7 @@ import kotlinx.coroutines.flow.update
 
 class FormViewModel: ViewModel() {
     private val _stateUI = MutableStateFlow(FormUiState())
-    val stateUI : StateFlow<FormUiState> = _stateUI.asStateFlow()
+    val stateUI: StateFlow<FormUiState> = _stateUI.asStateFlow()
 
 
     fun setDosen1(dosenPilihan1: String){
