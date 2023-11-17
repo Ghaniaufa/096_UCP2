@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">096_UCP2</string>
+    <string name="nama">Nama Mahasiswa</string>
+    <string name="nim">NIM</string>
+    <string name="konsentrasi">Konsentrasi</string>
+    <string name="jk">Judul Skripsi</string>
+    <string name="hs">Haris Setiawan</string>
+    <string name="ak">Aprilia Kurniati</string>
+    <string name="next">Lanjut</string>
+    <string name="cancel">Batal</string>
+    <string name="confirm">Konfirmasi</string>
+    <string name="back_button">Kembali</string>
+    <string name="btn_submit">Submit</string>
+    <string name="dp1">Dosen Pembimbing 1</string>
+    <string name="dp2">Dosen Pembimbing 2</string>
+    <string name="cd">Cahya Damarjati</string>
+    <string name="ndsn">Nama Dosen</string>
+
+
+</resources>
